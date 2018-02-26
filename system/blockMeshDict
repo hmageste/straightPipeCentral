@@ -43,7 +43,7 @@ vertices
 blocks
 (
     hex (7 15 14 6 5 13 12 4) (200 100 1) simpleGrading (1 0.5 1)
-    hex (1 9 15 7 3 11 13 5)  (200 100 1)  simpleGrading (1 1 1)
+    hex (1 9 15 7 3 11 13 5)  (200 50 1)  simpleGrading (1 1 1)
     hex (0 8 9 1 2 10 11 3)   (200 100 1) simpleGrading (1 2 1)
 );
 
