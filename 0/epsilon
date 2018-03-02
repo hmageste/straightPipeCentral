@@ -24,7 +24,7 @@ boundaryField
     inlet
     {
         type            fixedValue;
-        value           uniform 0.003;
+        value           $internalField;
     }
     outlet
     {
@@ -33,7 +33,7 @@ boundaryField
     wall
     {
         type            epsilonWallFunction;
-        value           uniform 0.003;
+        value           $internalField;
     }
 }
 
