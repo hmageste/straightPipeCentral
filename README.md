@@ -13,4 +13,14 @@ Initial values for $$k$$ and $$\epsilon$$ usually are taken as:
 
 where $$l=0.16Re^{-\frac{1}{8}}$$.
 
+## Monitoring the data
+
+### For monitoring the residuals do:
+foamMonitor -l postProcessing/residuals/0/residuals.dat
+
+### Ploting the graph is done with:
+gnuplot
+gnuplot> set style data linespoints
+gnuplot> plot "postProcessing/singleGraph/<time>/line_U.xy" u 2:1
+
 
