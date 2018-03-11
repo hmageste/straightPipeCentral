@@ -61,7 +61,15 @@ functions
     #includeFunc probes
     #includeFunc singleGraph
     #includeFunc residuals
-}
+ //   #includeFunc wallShearStress
 
+    newFunctionObject
+    {
+        type    modWallShearStressFuncObj;
+        functionObjectLibs ("postLib.so");
+        outputControl timeStep;
+        outputInterval 10;
+    }
+}
 
 // ************************************************************************* //

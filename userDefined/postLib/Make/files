@@ -1,0 +1,3 @@
+modWallShearStressFuncObj/modWallShearStressFuncObj.C
+
+LIB = $(FOAM_USER_LIBBIN)/postLib
