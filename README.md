@@ -23,4 +23,9 @@ gnuplot
 gnuplot> set style data linespoints
 gnuplot> plot "postProcessing/singleGraph/<time>/line_U.xy" u 2:1
 
+## Skin factor
+For a circular pipe, the following relations are true:
+- f = 8*tau/(pho*U^2)
+- delta_p = 1/4*f*L/R*rho*u^2
+
 
