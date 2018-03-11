@@ -67,8 +67,7 @@ functions
     {
         type    modWallShearStressFuncObj;
         functionObjectLibs ("postLib.so");
-        outputControl timeStep;
-        outputInterval 10;
+        outputControl outputTime;
     }
 }
 
