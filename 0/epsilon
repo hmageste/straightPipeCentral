@@ -15,9 +15,11 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
+#include "${FOAM_CASE}/constant/caseSettings"
+
 dimensions      [0 2 -3 0 0 0 0];
 
-internalField   uniform 307.3;
+internalField   $:initial.epsilon;
 
 boundaryField
 {
