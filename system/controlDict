@@ -24,7 +24,7 @@ DebugSwitches
 //    projectCurve 1;
 }
 
-application     blockMesh;
+application     simpleFoam;
 
 startFrom       startTime;
 
@@ -38,7 +38,7 @@ deltaT          1;
 
 writeControl    timeStep;
 
-writeInterval   10;
+writeInterval   100;
 
 purgeWrite      0;
 

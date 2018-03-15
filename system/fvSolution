@@ -38,6 +38,8 @@ SIMPLE
 {
     nNonOrthogonalCorrectors 0;
     consistent      yes;
+    pRefCell        0;
+    pRefValue       0;
 
     residualControl
     {
@@ -51,7 +53,7 @@ relaxationFactors
 {
     equations
     {
-        U               0.7; // 0.9 is more stable but 0.95 more convergent
+        U               0.5; // 0.9 is more stable but 0.95 more convergent
         ".*"            0.7; // 0.9 is more stable but 0.95 more convergent
     }
 }
