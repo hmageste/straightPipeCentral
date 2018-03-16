@@ -14,11 +14,11 @@ FoamFile
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-convertToMeters 0.01;
+convertToMeters 1e-2;
 
 length 200;
 height 4;
-highDensityRegion 0.05;
+highDensityRegion 1e-1;
 
 vertices
 (
