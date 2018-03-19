@@ -22,22 +22,11 @@ internalField   $:initial.p;
 
 boundaryField
 {
-    inlet
-    {
-        type            zeroGradient;
-    }
+    inlet  { $:inlet.p; }
 
-    outlet
-    {
-        type            fixedValue;
-        value           uniform 0;
-    }
+    outlet { $:outlet.p }
 
-    wall
-    {
-        type            zeroGradient;
-    }
-
+    wall   { $:wall.p }
 }
 
 // ************************************************************************* //

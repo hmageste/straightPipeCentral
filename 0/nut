@@ -23,21 +23,11 @@ internalField   $:initial.nut;
 
 boundaryField
 {
-    inlet
-    {
-        type            calculated;
-        value           uniform 0;
-    }
-    outlet
-    {
-        type            calculated;
-        value           uniform 0;
-    }
-    wall
-    {
-        type            nutkWallFunction;
-        value           uniform 0;
-    }
+    inlet  { $:inlet.nut; }
+
+    outlet { $:outlet.nut; }
+
+    wall   { $:wall.nut; }
 }
 
 

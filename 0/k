@@ -23,20 +23,11 @@ internalField   $:initial.k;
 
 boundaryField
 {
-    inlet
-    {
-        type            fixedValue;
-        value           $internalField;
-    }
-    outlet
-    {
-        type            zeroGradient;
-    }
-    wall
-    {
-        type            kLowReWallFunction;
-        value           uniform 1e-10;
-    }
+    inlet  { $:inlet.k; }
+
+    outlet { $:outlet.k; }
+
+    wall   { $:wall.k; }
 }
 
 

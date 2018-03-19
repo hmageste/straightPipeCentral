@@ -23,20 +23,11 @@ internalField   $:initial.epsilon;
 
 boundaryField
 {
-    inlet
-    {
-        type            fixedValue;
-        value           $internalField;
-    }
-    outlet
-    {
-        type            zeroGradient;
-    }
-    wall
-    {
-        type            epsilonWallFunction;
-        value           uniform 1e-8;
-    }
+    inlet { $:inlet.epsilon; }
+
+    outlet { $:outlet.epsilon; }
+
+    wall   { $:wall.epsilon; }
 }
 
 

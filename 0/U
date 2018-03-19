@@ -22,23 +22,11 @@ internalField   $:initial.U;
 
 boundaryField
 {
-    inlet
-    {
-        type            fixedValue;
-        value           $internalField;
-    }
+    inlet  { $:inlet.U; }
 
-    outlet
-    {
-        type            inletOutlet;
-        inletValue      uniform (0 0 0);
-        value           $internalField;
-    }
+    outlet { $:outlet.U; }
 
-    wall
-    {
-        type            noSlip;
-    }
+    wall   { $:wall.U; }
 }
 
 // ************************************************************************* //
