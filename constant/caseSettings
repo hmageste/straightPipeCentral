@@ -40,14 +40,20 @@ inlet
 
     k
     {
-        type            fixedValue;
-        value           $:initial.k;
+        type            turbulentIntensityKineticEnergyInlet;
+        intensity       0.02;        // 5% turbulence
+        value           $:initial.k; // placeholder
+        // optional
+        U               U;
     }
 
     epsilon
     {
-        type            fixedValue;
-        value           $:initial.epsilon;
+        type            turbulentMixingLengthDissipationRateInlet;
+        mixingLength    0.04;              // hidrostatic diameter of the pipe
+        value           $:initial.epsilon; // placeholder
+        // optional
+        k               k;
     }
 
     nut
@@ -61,10 +67,14 @@ outlet
 {
     U
     {
+        type            zeroGradient;
+    }
+    /*U
+    {
         type            inletOutlet;
         inletValue      $:initial.U;
         value           $:initial.U;
-    }
+    }*/
 
     p
     {
