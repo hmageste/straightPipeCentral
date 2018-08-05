@@ -1,0 +1,58 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5                                     |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    object      decomposeParDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+numberOfSubdomains 8;
+
+method          scotch; // possibilities are: simple/hierarchical/scotch/manual
+
+scotchCoeffs
+{
+    //processorWeights (1, 1, 1, 1, 1, 1, 1, 1);
+    strategy        optional; // possibilities are: optional/complex
+}
+
+simpleCoeffs
+{
+    n               (8 1 1);
+    delta           0.001;
+}
+
+hierarchicalCoeffs
+{
+    n               (1 1 1);
+    delta           0.001;
+    order           xyz;
+}
+
+manualCoeffs
+{
+    dataFile        "";
+}
+ 
+distributed     no; // change to yes to distribute data across 'roots' disks
+
+roots
+<nRoots>          
+(
+    // not needed to say that when the computation ends, we need to copy back
+    // these directories in order to run 'reconstructPar' to reconstruct the complete domain
+    "<root0>/home/hmageste/OpenFOAM/hmageste-5.0/run/straightPipeCentral/processor0"
+    "<root1>/home/hmageste/OpenFOAM/hmageste-5.0/run/straightPipeCentral/processor1"
+    ...
+);
+
+// ************************************************************************* //

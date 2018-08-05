@@ -6,6 +6,13 @@ import matplotlib as mpl
 import numpy as np
 from math import log10, exp, sqrt
 
+try:
+    from PyFoam.RunDictionary.ParsedParameterFile import ParsedParameterFile
+except ImportError:
+    raise ImportError("Error loading PyFoam, download it with the command 'pip install PyFoam' if not installed!")
+
+cs_dict = ParsedParameterFile("constant/caseSettings")
+
 def calcDarcyFrictionFactor( Re, Dh = 1.0, roughness = 0.0, th = 1e-6 ):
     f = 0
     if Re > 0 and Re <= 2320: # laminar flow

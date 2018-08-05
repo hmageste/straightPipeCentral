@@ -1,9 +1,22 @@
 #!/bin/sh
 cd ${0%/*} || exit 1    # Run from this directory
 
-# Source tutorial run functions
+[ ! -d 0 ] && cp -r 0.orig 0
+
+# Source tutorial run functions like 'getApplication'
 . $WM_PROJECT_DIR/bin/tools/RunFunctions
 
+# Set application name from 'application' entry in system/controlDict
+application='getApplication'
+
 runApplication blockMesh
+runApplication decomposePar -copyZero
+
+runParallel patchSummary
+runParallel $application
+
+runApplication reconstructParMesh -constant
+runApplication reconstructPar -latestTime
+
 
 #------------------------------------------------------------------------------
