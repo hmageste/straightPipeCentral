@@ -21,7 +21,7 @@ fields  (U p);
 // Override settings here, e.g.
 setConfig
 {
-    type midPoint; // uniform, midPoint, midPointAndFace
+    type lineCell; // lineUniform, lineCell, lineCellFace
     axis y; // distance, x, y, z, xyz
     nPoints 10000;
 }

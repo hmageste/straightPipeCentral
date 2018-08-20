@@ -58,17 +58,18 @@ graphFormat     raw;
 
 functions
 {
-    #includeFunc probes
-    #includeFunc singleGraph
+//    #includeFunc probes
+//    #includeFunc singleGraph
     #includeFunc residuals
- //   #includeFunc wallShearStress
+    #includeFunc wallShearStress
 
-    newFunctionObject
+/*    newFunctionObject
     {
         type    modWallShearStressFuncObj;
         functionObjectLibs ("postLib.so");
         writeControl outputTime;
     }
+*/
 }
 
 // ************************************************************************* //
